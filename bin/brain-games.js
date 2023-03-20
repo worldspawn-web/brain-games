@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
+/* eslint-disable no-console, import/extensions */
+/* eslint linebreak-style: ["error", "windows"] */
+
 import { userNameAsk } from '../src/cli.js';
 
-console.log("Welcome to the Brain Games!");
+console.log('Welcome to the Brain Games!');
 userNameAsk();
