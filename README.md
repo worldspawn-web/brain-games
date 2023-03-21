@@ -6,4 +6,4 @@
 [![asciicast](https://asciinema.org/a/0VvYLzafNY7uwgiwtSeKV3leN.svg)](https://asciinema.org/a/0VvYLzafNY7uwgiwtSeKV3leN)
 <hr>
 #### brain-calc.js
-[![asciicast](https://asciinema.org/a/9LGSqxI7ytzAL7kFEXpFh7tej.svg)](https://asciinema.org/a/9LGSqxI7ytzAL7kFEXpFh7tej)
+<a href="https://asciinema.org/a/9LGSqxI7ytzAL7kFEXpFh7tej" target="_blank"><img src="https://asciinema.org/a/9LGSqxI7ytzAL7kFEXpFh7tej.svg" /></a>
