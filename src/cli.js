@@ -1,10 +1,11 @@
 /* eslint-disable no-console, import/extensions */
-/* eslint linebreak-style: ["error", "windows"] */
+/* eslint linebreak-style: off */
 
 import readlineSync from 'readline-sync';
 
-export const userNameAsk = () => {
+const userNameAsk = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 };
+export default userNameAsk;
