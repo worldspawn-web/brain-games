@@ -20,7 +20,7 @@ export const randomNumber = (maxValue) => {
 // ends the game on third iteration
 export const winLogic = (index, username) => {
   if (index === 2) {
-    console.log(`Congratulations, ${username}`);
+    console.log(`Congratulations, ${username}!`);
   }
 };
 
