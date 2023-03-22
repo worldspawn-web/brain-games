@@ -33,7 +33,7 @@ const brainProgressionGame = () => {
     // saves the answer from array index
     calcAnswer = resultArray[skipStorage];
     // replaces the answer with dots
-    resultArray[skipStorage] = '...';
+    resultArray[skipStorage] = '..';
 
     console.log('What number is missing in the progression?');
     console.log(`Question: ${resultArray.join(' ')}`);
