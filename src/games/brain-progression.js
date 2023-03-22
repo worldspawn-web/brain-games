@@ -11,13 +11,16 @@ import { userGreeting } from '../index.js';
 const brainProgressionGame = () => {
   // greeting
   const userName = userGreeting();
-  // tempvar
+  // tempvars
+  let firstRandNumber;
+  let progressionValue;
   let calcAnswer;
+  let userAnswer;
   for (let i = 0; i < 3; i += 1) {
     // generates random first item of array
-    let firstRandNumber = randomNumber(100);
+    firstRandNumber = randomNumber(100);
     // diff between [0] and [1]
-    const progressionValue = randomNumber(20);
+    progressionValue = randomNumber(20);
     // makes an array empty for each iteration
     const resultArray = [firstRandNumber];
     // pushes 10 numbers to the brand new fresh array
@@ -34,7 +37,7 @@ const brainProgressionGame = () => {
 
     console.log('What number is missing in the progression?');
     console.log(resultArray);
-    const userAnswer = readlineSync.question('Your answer: ');
+    userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === calcAnswer.toString()) {
       console.log('Correct!');
