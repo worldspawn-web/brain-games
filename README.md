@@ -7,3 +7,6 @@ brain-even.js
 <hr>
 brain-calc.js
 <a href="https://asciinema.org/a/9LGSqxI7ytzAL7kFEXpFh7tej" target="_blank"><img src="https://asciinema.org/a/9LGSqxI7ytzAL7kFEXpFh7tej.svg" /></a>
+<hr>
+brain-gcd.js
+<a href="https://asciinema.org/a/HEeviW6Fpzy4Ph8boDWbgsPV5" target="_blank"><img src="https://asciinema.org/a/HEeviW6Fpzy4Ph8boDWbgsPV5.svg" /></a>
