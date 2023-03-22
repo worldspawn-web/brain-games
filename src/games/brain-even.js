@@ -11,7 +11,7 @@ import { userGreeting } from '../index.js';
 // greeting
 const brainEvenGame = () => {
   const userName = userGreeting();
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
+  console.log('Answer "yes" if number even otherwise answer "no".');
   // temp vars to store info
   let firstRandomNumber;
   let correctAnswer;

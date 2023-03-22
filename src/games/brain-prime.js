@@ -25,7 +25,7 @@ const brainPrimeGame = () => {
       }
     }
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-    console.log(questionNumber);
+    console.log(`Question: ${questionNumber}`);
     userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer.toLowerCase() === isPrimeMsg) {

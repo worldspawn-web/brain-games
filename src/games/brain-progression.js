@@ -35,8 +35,8 @@ const brainProgressionGame = () => {
     // replaces the answer with dots
     resultArray[skipStorage] = '...';
 
-    console.log('What number is missing in the progression?');
-    console.log(resultArray);
+    console.log('What number is missing in this progression?');
+    console.log(`Question: ${resultArray.join(' ')}`);
     userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === calcAnswer.toString()) {

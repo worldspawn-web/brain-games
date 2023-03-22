@@ -26,5 +26,5 @@ export const winLogic = (index, username) => {
 
 export const wrongMsg = (userAnswer, calcNumber, userName) => {
   console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calcNumber}'.`);
-  console.log(`Let's try again, ${userName}`);
+  console.log(`Let's try again, ${userName}!`);
 };

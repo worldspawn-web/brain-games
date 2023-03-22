@@ -17,7 +17,7 @@ const brainGcdGame = () => {
   let calcNumber;
   let userAnswer;
 
-  console.log('Find the greatest common divisor if given numbers.');
+  console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
     randomNumber1 = randomNumber(100);
     randomNumber2 = randomNumber(100);
