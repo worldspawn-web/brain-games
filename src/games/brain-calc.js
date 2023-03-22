@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /* eslint-disable no-console, import/extensions */
-/* eslint linebreak-style: ["error", "windows"] */
+/* eslint linebreak-style: off */
 import readlineSync from 'readline-sync';
 import { randomNumber100 } from '../index.js';
 import { userGreeting } from '../index.js';
 
-// greeting
 const brainCalcGame = () => {
+  // greeting
   const userName = userGreeting();
   // tempvars
   let randomNumberOne;
