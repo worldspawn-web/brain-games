@@ -12,15 +12,12 @@ const brainGcdGame = () => {
   // greeting
   const userName = userGreeting();
   // tempvars
-  let randomNumber1;
-  let randomNumber2;
   let calcNumber;
-  let userAnswer;
 
   console.log('Find the greatest common divisor if given numbers.');
   for (let i = 0; i < 3; i += 1) {
-    randomNumber1 = randomNumber(100);
-    randomNumber2 = randomNumber(100);
+    const randomNumber1 = randomNumber(100);
+    const randomNumber2 = randomNumber(100);
     if (randomNumber1 > randomNumber2) {
       for (let j = randomNumber2; j > 0; j -= 1) {
         const tempCheck1 = randomNumber1 % j;
@@ -40,9 +37,8 @@ const brainGcdGame = () => {
         }
       }
     }
-
     console.log(`Question: ${randomNumber1} ${randomNumber2}`);
-    userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
     // gamelogic
     if (userAnswer === calcNumber.toString()) {
       console.log('Correct!');

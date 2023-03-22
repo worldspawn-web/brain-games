@@ -11,21 +11,16 @@ import { userGreeting } from '../index.js';
 const brainCalcGame = () => {
   // greeting
   const userName = userGreeting();
-  // tempvars
-  let randomNumberOne;
-  let randomNumberTwo;
   const mathSigns = ['+', '-', '*'];
-  let randomSign;
-  let userAnswer;
   for (let i = 0; i < 3; i += 1) {
     console.log('What is the result of the expression?');
     // two random gen numbers
-    randomNumberOne = randomNumber(100);
-    randomNumberTwo = randomNumber(100);
+    const randomNumberOne = randomNumber(100);
+    const randomNumberTwo = randomNumber(100);
     // get a random value from mathSigns array
-    randomSign = mathSigns[randomNumber(3)];
+    const randomSign = mathSigns[randomNumber(3)];
     console.log(`Question: ${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
-    userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
     // empty storage for calculated answer
     let calcAnswer;
     // checks how to calculate depends on random sign array

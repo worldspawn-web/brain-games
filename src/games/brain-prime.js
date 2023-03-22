@@ -12,12 +12,10 @@ const brainPrimeGame = () => {
   // greeting
   const userName = userGreeting();
   // tempvars
-  let questionNumber;
   let isPrimeMsg = 'yes';
-  let userAnswer;
 
   for (let i = 0; i < 3; i += 1) {
-    questionNumber = randomNumber(100);
+    const questionNumber = randomNumber(100);
     for (let k = 2; k < questionNumber; k += 1) {
       if (questionNumber % k === 0) {
         isPrimeMsg = 'no';
@@ -26,7 +24,7 @@ const brainPrimeGame = () => {
     }
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
     console.log(questionNumber);
-    userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer.toLowerCase() === isPrimeMsg) {
       console.log('Correct!');
