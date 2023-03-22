@@ -1,7 +1,10 @@
 #!/usr/bin/env node
+/* eslint-disable import/no-duplicates */
 /* eslint-disable no-console, import/extensions */
 /* eslint linebreak-style: off */
 import readlineSync from 'readline-sync';
+import { wrongMsg } from '../index.js';
+import { winLogic } from '../index.js';
 import { randomNumber100 } from '../index.js';
 import { userGreeting } from '../index.js';
 
@@ -37,15 +40,11 @@ const brainCalcGame = () => {
     if (userAnswer === calcAnswer.toString()) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calcAnswer}'.`);
-      console.log(`Let's try again, ${userName}`);
+      wrongMsg(userAnswer, calcAnswer, userName);
       break;
     }
     // game ends on win
-    if (i === 2) {
-      console.log(`Congratulations, ${userName}`);
-      break;
-    }
+    winLogic(i, userName);
   }
 };
 export default brainCalcGame;

@@ -1,8 +1,11 @@
 #!/usr/bin/env node
+/* eslint-disable import/no-duplicates */
 /* eslint-disable no-console, import/extensions */
 /* eslint linebreak-style: off */
 import readlineSync from 'readline-sync';
-import { userGreeting } from "../index.js";
+import { wrongMsg } from '../index.js';
+import { winLogic } from '../index.js';
+import { userGreeting } from '../index.js';
 import { randomNumber100 } from '../index.js';
 
 const brainGcdGame = () => {
@@ -24,7 +27,7 @@ const brainGcdGame = () => {
         const tempCheck2 = randomNumber2 % j;
         if (tempCheck1 === 0 && tempCheck2 === 0) {
           calcNumber = j;
-          j = 0;
+          j = 1;
         }
       }
     } else if (randomNumber1 < randomNumber2) {
@@ -32,8 +35,8 @@ const brainGcdGame = () => {
         const tempCheck1 = randomNumber1 % k;
         const tempCheck2 = randomNumber2 % k;
         if (tempCheck1 === 0 && tempCheck2 === 0) {
-          calcNumber = i;
-          k = 0;
+          calcNumber = k;
+          k = 1;
         }
       }
     }
@@ -44,15 +47,11 @@ const brainGcdGame = () => {
     if (userAnswer === calcNumber.toString()) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calcNumber}'.`);
-      console.log(`Let's try again, ${userName}`);
+      wrongMsg(userAnswer, calcNumber, userName);
       break;
     }
     // game ends on win
-    if (i === 2) {
-      console.log(`Congratulations, ${userName}`);
-      break;
-    }
+    winLogic(i, userName);
   }
 };
 export default brainGcdGame;

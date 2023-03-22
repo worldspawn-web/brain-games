@@ -1,7 +1,10 @@
 #!/usr/bin/env node
+/* eslint-disable import/no-duplicates */
 /* eslint-disable no-console, import/extensions */
 /* eslint linebreak-style: off */
 import readlineSync from 'readline-sync';
+import { wrongMsg } from '../index.js';
+import { winLogic } from '../index.js';
 import { randomNumber100 } from '../index.js';
 import { userGreeting } from '../index.js';
 
@@ -29,15 +32,11 @@ const brainEvenGame = () => {
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${userName}`);
+      wrongMsg(userAnswer, correctAnswer, userName);
       break;
     }
     // game ends on 3 correct answers
-    if (i === 2) {
-      console.log(`Congratulations, ${userName}`);
-      break;
-    }
+    winLogic(i, userName);
   }
 };
 export default brainEvenGame;
