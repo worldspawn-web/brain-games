@@ -11,7 +11,20 @@ export const userGreeting = () => {
   return userName;
 };
 
+// generates random number 0-100
 export const randomNumber100 = () => {
   const temp = Math.floor(Math.random() * 100);
   return temp;
+};
+
+// ends the game on third iteration
+export const winLogic = (index, username) => {
+  if (index === 2) {
+    console.log(`Congratulations, ${username}`);
+  }
+};
+
+export const wrongMsg = (userAnswer, calcNumber, userName) => {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${calcNumber}'.`);
+  console.log(`Let's try again, ${userName}`);
 };
