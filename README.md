@@ -13,3 +13,6 @@ brain-gcd.js
 <hr>
 brain-progression.js
 <a href="https://asciinema.org/a/aZvZ1F7vNu4AETbFinHWzq8ge" target="_blank"><img src="https://asciinema.org/a/aZvZ1F7vNu4AETbFinHWzq8ge.svg" /></a>
+<hr>
+brain-prime.js
+<a href="https://asciinema.org/a/NfkMVP0SFcBvfOz26FXVwmjKY" target="_blank"><img src="https://asciinema.org/a/NfkMVP0SFcBvfOz26FXVwmjKY.svg" /></a>
