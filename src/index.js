@@ -11,9 +11,9 @@ export const userGreeting = () => {
   return userName;
 };
 
-// generates random number 0-100
-export const randomNumber100 = () => {
-  const temp = Math.floor(Math.random() * 100);
+// generates random number 0-20
+export const randomNumber = (maxValue) => {
+  const temp = Math.floor(Math.random() * maxValue);
   return temp;
 };
 
