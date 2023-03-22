@@ -5,7 +5,7 @@
 import readlineSync from 'readline-sync';
 import { wrongMsg } from '../index.js';
 import { winLogic } from '../index.js';
-import { randomNumber100 } from '../index.js';
+import { randomNumber } from '../index.js';
 import { userGreeting } from '../index.js';
 
 // greeting
@@ -13,17 +13,17 @@ const brainEvenGame = () => {
   const userName = userGreeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
   // temp vars to store info
-  let randomNumber;
+  let firstRandomNumber;
   let correctAnswer;
   let userAnswer;
   for (let i = 0; i < 3; i += 1) {
     // random generated number for every iteration
-    randomNumber = randomNumber100();
-    console.log(`Question: ${randomNumber}`);
+    firstRandomNumber = randomNumber(100);
+    console.log(`Question: ${firstRandomNumber}`);
     // toLowerCase() used to make comparison easy
     userAnswer = (readlineSync.question('Your answer: ')).toLowerCase();
     // correct answer logic
-    if (randomNumber % 2 === 0) {
+    if (firstRandomNumber % 2 === 0) {
       correctAnswer = 'yes';
     } else {
       correctAnswer = 'no';

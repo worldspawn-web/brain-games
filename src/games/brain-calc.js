@@ -5,7 +5,7 @@
 import readlineSync from 'readline-sync';
 import { wrongMsg } from '../index.js';
 import { winLogic } from '../index.js';
-import { randomNumber100 } from '../index.js';
+import { randomNumber } from '../index.js';
 import { userGreeting } from '../index.js';
 
 const brainCalcGame = () => {
@@ -20,10 +20,10 @@ const brainCalcGame = () => {
   for (let i = 0; i < 3; i += 1) {
     console.log('What is the result of the expression?');
     // two random gen numbers
-    randomNumberOne = randomNumber100();
-    randomNumberTwo = randomNumber100();
+    randomNumberOne = randomNumber(100);
+    randomNumberTwo = randomNumber(100);
     // get a random value from mathSigns array
-    randomSign = mathSigns[Math.floor(Math.random() * 3)];
+    randomSign = mathSigns[randomNumber(3)];
     console.log(`Question: ${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
     userAnswer = readlineSync.question('Your answer: ');
     // empty storage for calculated answer

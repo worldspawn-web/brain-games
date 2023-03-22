@@ -6,7 +6,7 @@ import readlineSync from 'readline-sync';
 import { wrongMsg } from '../index.js';
 import { winLogic } from '../index.js';
 import { userGreeting } from '../index.js';
-import { randomNumber100 } from '../index.js';
+import { randomNumber } from '../index.js';
 
 const brainGcdGame = () => {
   // greeting
@@ -19,8 +19,8 @@ const brainGcdGame = () => {
 
   console.log('Find the greatest common divisor if given numbers.');
   for (let i = 0; i < 3; i += 1) {
-    randomNumber1 = randomNumber100();
-    randomNumber2 = randomNumber100();
+    randomNumber1 = randomNumber(100);
+    randomNumber2 = randomNumber(100);
     if (randomNumber1 > randomNumber2) {
       for (let j = randomNumber2; j > 0; j -= 1) {
         const tempCheck1 = randomNumber1 % j;

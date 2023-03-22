@@ -2,7 +2,6 @@
 /* eslint-disable import/no-duplicates */
 /* eslint-disable no-console, import/extensions */
 /* eslint linebreak-style: off */
-
 import readlineSync from 'readline-sync';
 import { wrongMsg } from '../index.js';
 import { winLogic } from '../index.js';
