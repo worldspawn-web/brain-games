@@ -10,3 +10,6 @@ brain-calc.js
 <hr>
 brain-gcd.js
 <a href="https://asciinema.org/a/HEeviW6Fpzy4Ph8boDWbgsPV5" target="_blank"><img src="https://asciinema.org/a/HEeviW6Fpzy4Ph8boDWbgsPV5.svg" /></a>
+<hr>
+brain-progression.js
+<a href="https://asciinema.org/a/aZvZ1F7vNu4AETbFinHWzq8ge" target="_blank"><img src="https://asciinema.org/a/aZvZ1F7vNu4AETbFinHWzq8ge.svg" /></a>
