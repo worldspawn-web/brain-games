@@ -18,7 +18,7 @@ const brainCalcGame = () => {
     const randomNumberOne = randomNumber(100);
     const randomNumberTwo = randomNumber(100);
     // get a random value from mathSigns array
-    const randomSign = mathSigns[randomNumber(3)];
+    const randomSign = mathSigns[randomNumber(mathSigns.length)];
     console.log(`Question: ${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
     const userAnswer = readlineSync.question('Your answer: ');
     // empty storage for calculated answer
