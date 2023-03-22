@@ -43,8 +43,9 @@ const brainGcdGame = () => {
 
     console.log(`Question: ${randomNumber1} ${randomNumber2}`);
     userAnswer = readlineSync.question('Your answer: ');
+    calcNumber = calcNumber.toString();
     // gamelogic
-    if (userAnswer === calcNumber.toString()) {
+    if (userAnswer === calcNumber) {
       console.log('Correct!');
     } else {
       wrongMsg(userAnswer, calcNumber, userName);
