@@ -13,7 +13,7 @@ const brainPrimeGame = () => {
   const userName = userGreeting();
   // tempvars
   let questionNumber;
-  let isPrimeMsg = 'yes';
+  let isPrimeMsg;
   let userAnswer;
 
   for (let i = 0; i < 3; i += 1) {
@@ -22,6 +22,8 @@ const brainPrimeGame = () => {
       if (questionNumber % k === 0) {
         isPrimeMsg = 'no';
         break;
+      } else if (questionNumber % k !== 0) {
+        isPrimeMsg = 'yes';
       }
     }
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
