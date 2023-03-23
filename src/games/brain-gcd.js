@@ -40,11 +40,11 @@ const brainGcdGame = () => {
         }
       }
     }
-    // calcNumber = calcNumber.toString();
+    calcNumber = String(calcNumber);
     console.log(`Question: ${randomNumber1} ${randomNumber2}`);
     userAnswer = readlineSync.question('Your answer: ');
     // gamelogic
-    if (userAnswer == calcNumber) {
+    if (userAnswer === calcNumber) {
       console.log('Correct!');
     } else {
       wrongMsg(userAnswer, calcNumber, userName);
