@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "description": "'Brain-Games' is a project that contains 5 console games that will train players brain.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
