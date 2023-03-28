@@ -6,7 +6,7 @@ import { randomNumber } from '../index.js';
 import { userGreeting } from '../index.js';
 
 // greeting
-const brainEvenGame = () => {
+const runBrainEvenGame = () => {
   const userName = userGreeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   // temp vars to store info
@@ -36,4 +36,4 @@ const brainEvenGame = () => {
     winLogic(i, userName);
   }
 };
-export default brainEvenGame;
+export default runBrainEvenGame;

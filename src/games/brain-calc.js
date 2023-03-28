@@ -5,7 +5,7 @@ import { winLogic } from '../index.js';
 import { randomNumber } from '../index.js';
 import { userGreeting } from '../index.js';
 
-const brainCalcGame = () => {
+const runBrainCalcGame = () => {
   // greeting
   const userName = userGreeting();
   // tempvars
@@ -44,4 +44,4 @@ const brainCalcGame = () => {
     winLogic(i, userName);
   }
 };
-export default brainCalcGame;
+export default runBrainCalcGame;
