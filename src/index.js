@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console, import/extensions */
-/* eslint linebreak-style: off */
 import readlineSync from 'readline-sync';
 
 // greets user, returns username

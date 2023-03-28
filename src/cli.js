@@ -1,6 +1,3 @@
-/* eslint-disable no-console, import/extensions */
-/* eslint linebreak-style: off */
-
 import readlineSync from 'readline-sync';
 
 const userNameAsk = () => {
