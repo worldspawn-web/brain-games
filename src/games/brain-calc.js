@@ -20,7 +20,7 @@ const runBrainCalcGame = () => {
     randomNumberOne = getRandomInRange(0, 100);
     randomNumberTwo = getRandomInRange(0, 100);
     // get a random value from mathSigns array
-    randomSign = mathSigns[getRandomInRange(0, mathSigns.length)];
+    randomSign = mathSigns[getRandomInRange(0, mathSigns.length - 1)];
     console.log(`Question: ${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
     userAnswer = readlineSync.question('Your answer: ');
     // empty storage for calculated answer
