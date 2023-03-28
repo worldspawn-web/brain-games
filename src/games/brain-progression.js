@@ -2,8 +2,8 @@
 import readlineSync from 'readline-sync';
 import { wrongMsg } from '../index.js';
 import { winLogic } from '../index.js';
-import { randomNumber } from '../index.js';
 import { userGreeting } from '../index.js';
+import getRandomInRange from '../utils.js';
 
 const runBrainProgressionGame = () => {
   // greeting
@@ -15,9 +15,9 @@ const runBrainProgressionGame = () => {
   let userAnswer;
   for (let i = 0; i < 3; i += 1) {
     // generates random first item of array
-    firstRandNumber = randomNumber(100);
+    firstRandNumber = getRandomInRange(0, 100);
     // diff between [0] and [1]
-    progressionValue = randomNumber(20);
+    progressionValue = getRandomInRange(0, 20);
     // makes an array empty for each iteration
     const resultArray = [firstRandNumber];
     // pushes 10 numbers to the brand new fresh array
@@ -26,7 +26,7 @@ const runBrainProgressionGame = () => {
       resultArray.push(firstRandNumber);
     }
     // tempvar to store the index of chosen item
-    const skipStorage = randomNumber(10);
+    const skipStorage = getRandomInRange(0, 10);
     // saves the answer from array index
     calcAnswer = resultArray[skipStorage];
     // replaces the answer with dots

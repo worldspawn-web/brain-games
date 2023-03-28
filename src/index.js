@@ -9,12 +9,6 @@ export const userGreeting = () => {
   return userName;
 };
 
-// generates random number
-export const randomNumber = (maxValue) => {
-  const temp = Math.floor(Math.random() * maxValue);
-  return temp;
-};
-
 // ends the game on third iteration
 export const winLogic = (index, username) => {
   if (index === 2) {

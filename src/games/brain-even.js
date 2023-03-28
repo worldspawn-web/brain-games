@@ -2,8 +2,8 @@
 import readlineSync from 'readline-sync';
 import { wrongMsg } from '../index.js';
 import { winLogic } from '../index.js';
-import { randomNumber } from '../index.js';
 import { userGreeting } from '../index.js';
+import getRandomInRange from '../utils.js';
 
 // greeting
 const runBrainEvenGame = () => {
@@ -15,7 +15,7 @@ const runBrainEvenGame = () => {
   let userAnswer;
   for (let i = 0; i < 3; i += 1) {
     // random generated number for every iteration
-    firstRandomNumber = randomNumber(100);
+    firstRandomNumber = getRandomInRange(1, 100);
     console.log(`Question: ${firstRandomNumber}`);
     // toLowerCase() used to make comparison easy
     userAnswer = (readlineSync.question('Your answer: ')).toLowerCase();
