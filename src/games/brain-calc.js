@@ -2,8 +2,8 @@
 import readlineSync from 'readline-sync';
 import { wrongMsg } from '../index.js';
 import { winLogic } from '../index.js';
-import { randomNumber } from '../index.js';
 import { userGreeting } from '../index.js';
+import getRandomInRange from '../utils.js';
 
 const runBrainCalcGame = () => {
   // greeting
@@ -17,10 +17,10 @@ const runBrainCalcGame = () => {
   for (let i = 0; i < 3; i += 1) {
     console.log('What is the result of the expression?');
     // two random gen numbers
-    randomNumberOne = randomNumber(100);
-    randomNumberTwo = randomNumber(100);
+    randomNumberOne = getRandomInRange(0, 100);
+    randomNumberTwo = getRandomInRange(0, 100);
     // get a random value from mathSigns array
-    randomSign = mathSigns[randomNumber(mathSigns.length)];
+    randomSign = mathSigns[getRandomInRange(0, mathSigns.length)];
     console.log(`Question: ${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
     userAnswer = readlineSync.question('Your answer: ');
     // empty storage for calculated answer
