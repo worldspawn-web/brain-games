@@ -1,47 +1,37 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { wrongMsg } from '../index.js';
-import { winLogic } from '../index.js';
-import { userGreeting } from '../index.js';
+import runEngine from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const runBrainCalcGame = () => {
-  // greeting
-  const userName = userGreeting();
-  // tempvars
-  let randomNumberOne;
-  let randomNumberTwo;
+// question for export
+const rules = 'What is the result of the expression?';
+// picks a random sign
+const randomSign = () => {
   const mathSigns = ['+', '-', '*'];
-  let randomSign;
-  let userAnswer;
-  for (let i = 0; i < 3; i += 1) {
-    console.log('What is the result of the expression?');
-    // two random gen numbers
-    randomNumberOne = getRandomInRange(0, 100);
-    randomNumberTwo = getRandomInRange(0, 100);
-    // get a random value from mathSigns array
-    randomSign = mathSigns[getRandomInRange(0, mathSigns.length - 1)];
-    console.log(`Question: ${randomNumberOne} ${randomSign} ${randomNumberTwo}`);
-    userAnswer = readlineSync.question('Your answer: ');
-    // empty storage for calculated answer
-    let calcAnswer;
-    // checks how to calculate depends on random sign array
-    if (randomSign === mathSigns[0]) {
-      calcAnswer = randomNumberOne + randomNumberTwo;
-    } else if (randomSign === mathSigns[1]) {
-      calcAnswer = randomNumberOne - randomNumberTwo;
-    } else if (randomSign === mathSigns[2]) {
-      calcAnswer = randomNumberOne * randomNumberTwo;
-    }
-    // game logic
-    if (userAnswer === calcAnswer.toString()) {
-      console.log('Correct!');
-    } else {
-      wrongMsg(userAnswer, calcAnswer, userName);
-      break;
-    }
-    // game ends on win
-    winLogic(i, userName);
+  const selectedSignIndex = getRandomInRange(0, mathSigns.length - 1);
+  return mathSigns[selectedSignIndex];
+};
+// calculates the correct answer
+const calcAnswer = (randomNumberOne, randomNumberTwo, mathSign) => {
+  switch (mathSign) {
+    case '+':
+      return randomNumberOne + randomNumberTwo;
+    case '-':
+      return randomNumberOne - randomNumberTwo;
+    case '*':
+      return randomNumberOne * randomNumberTwo;
+    default:
+      return `Something is wrong with math sign! (value: ${mathSign})`;
   }
 };
+// generates basic data
+const generateRound = () => {
+  const randomNumberOne = getRandomInRange(0, 100);
+  const randomNumberTwo = getRandomInRange(0, 100);
+  const mathSign = randomSign();
+  const question = `${randomNumberOne} ${mathSign} ${randomNumberTwo}`;
+  const answer = calcAnswer(randomNumberOne, randomNumberTwo, mathSign);
+  return [question, answer];
+};
+
+const runBrainCalcGame = () => runEngine(rules, generateRound);
 export default runBrainCalcGame;
