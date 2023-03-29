@@ -1,49 +1,35 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { wrongMsg } from '../index.js';
-import { winLogic } from '../index.js';
-import { userGreeting } from '../index.js';
+import runEngine from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const runBrainProgressionGame = () => {
-  // greeting
-  const userName = userGreeting();
-  // tempvars
-  let firstRandNumber;
-  let progressionValue;
-  let calcAnswer;
-  let userAnswer;
-  for (let i = 0; i < 3; i += 1) {
-    // generates random first item of array
-    firstRandNumber = getRandomInRange(0, 100);
-    // diff between [0] and [1]
-    progressionValue = getRandomInRange(0, 20);
-    // makes an array empty for each iteration
-    const resultArray = [firstRandNumber];
-    // pushes 10 numbers to the brand new fresh array
-    for (let j = 0; j < 10; j += 1) {
-      firstRandNumber += progressionValue;
-      resultArray.push(firstRandNumber);
-    }
-    // tempvar to store the index of chosen item
-    const skipStorage = getRandomInRange(0, 10);
-    // saves the answer from array index
-    calcAnswer = resultArray[skipStorage];
-    // replaces the answer with dots
-    resultArray[skipStorage] = '..';
-
-    console.log('What number is missing in the progression?');
-    console.log(`Question: ${resultArray.join(' ')}`);
-    userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer === calcAnswer.toString()) {
-      console.log('Correct!');
-    } else {
-      wrongMsg(userAnswer, calcAnswer, userName);
-      break;
-    }
-    // game ends on win
-    winLogic(i, userName);
+// question for export
+const rules = 'What number is missing in the progression?';
+// creates array
+const getProgressionArray = (randomNumber, progressionValue) => {
+  const tempArray = [];
+  // for progression value
+  let tempValue = 0;
+  // pushes basic data to array
+  for (let i = 0; i < 10; i += 1) {
+    tempArray.push(randomNumber + tempValue);
+    tempValue += progressionValue;
   }
+  return tempArray;
 };
+// generates basic data
+const generateRound = () => {
+  const randomNumber = getRandomInRange(0, 100);
+  const progressionValue = getRandomInRange(1, 30);
+  // gets array
+  const progression = getProgressionArray(randomNumber, progressionValue);
+  const hiddenIndex = getRandomInRange(0, progression.length - 1);
+  // saves the answer...
+  const answer = progression[hiddenIndex];
+  // ...and only after that, replaces the correct answer
+  progression[hiddenIndex] = '..';
+  const question = `${progression}`;
+  return [question, answer];
+};
+
+const runBrainProgressionGame = () => runEngine(rules, generateRound);
 export default runBrainProgressionGame;
