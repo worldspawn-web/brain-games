@@ -27,7 +27,7 @@ const generateRound = () => {
   const answer = progression[hiddenIndex];
   // ...and only after that, replaces the correct answer
   progression[hiddenIndex] = '..';
-  const question = `${progression}`;
+  const question = progression.join(' ');
   return [question, answer];
 };
 
