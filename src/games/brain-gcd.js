@@ -3,20 +3,20 @@ import runEngine from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
-const calcAnswer = (randomNumberOne, randomNumberTwo) => {
+const gcd = (randomNumberOne, randomNumberTwo) => {
   if (randomNumberTwo > randomNumberOne) {
-    return calcAnswer(randomNumberTwo, randomNumberOne);
+    return gcd(randomNumberTwo, randomNumberOne);
   }
   if (!randomNumberTwo) {
     return randomNumberOne;
   }
-  return calcAnswer(randomNumberTwo, randomNumberOne % randomNumberTwo);
+  return gcd(randomNumberTwo, randomNumberOne % randomNumberTwo);
 };
 const generateRound = () => {
   const randomNumberOne = getRandomInRange(0, 100);
   const randomNumberTwo = getRandomInRange(0, 100);
   const question = `${randomNumberOne} ${randomNumberTwo}`;
-  const answer = calcAnswer(randomNumberOne, randomNumberTwo);
+  const answer = gcd(randomNumberOne, randomNumberTwo);
   return [question, answer];
 };
 
