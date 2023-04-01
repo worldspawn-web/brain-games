@@ -3,16 +3,16 @@ import runEngine from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
-const calcAnswer = (randomNumber) => {
+const isEven = (randomNumber) => {
   if (randomNumber % 2 !== 0) {
-    return 'no';
+    return false;
   }
-  return 'yes';
+  return true;
 };
 const generateRound = () => {
   const randomNumber = getRandomInRange(0, 100);
   const question = `${randomNumber}`;
-  const answer = calcAnswer(randomNumber);
+  const answer = isEven(randomNumber) ? 'yes' : 'no';
   return [question, answer];
 };
 
