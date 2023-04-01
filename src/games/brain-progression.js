@@ -3,7 +3,7 @@ import runEngine from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
-const getProgressionArray = (randomNumber, progressionValue) => {
+const getProgression = (randomNumber, progressionValue) => {
   const tempArray = [];
   let tempValue = 0;
   for (let i = 0; i < 10; i += 1) {
@@ -15,7 +15,7 @@ const getProgressionArray = (randomNumber, progressionValue) => {
 const generateRound = () => {
   const randomNumber = getRandomInRange(0, 100);
   const progressionValue = getRandomInRange(1, 30);
-  const progression = getProgressionArray(randomNumber, progressionValue);
+  const progression = getProgression(randomNumber, progressionValue);
   const hiddenIndex = getRandomInRange(0, progression.length - 1);
   const answer = progression[hiddenIndex];
   progression[hiddenIndex] = '..';
